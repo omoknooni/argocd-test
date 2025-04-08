@@ -13,11 +13,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: green
+  name: red
 spec:
   type: ClusterIP
   selector:
-    app: green
+    app: red
   ports:
   - port: 80
     targetPort: 8080

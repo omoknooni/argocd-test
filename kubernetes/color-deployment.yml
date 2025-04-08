@@ -27,24 +27,24 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-deploy
+  name: red-deploy
   labels:
-    app: green
+    app: red
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: green
+      app: red
   template:
     metadata:
       labels:
-        app: green
+        app: red
     spec:
       containers:
-      - name: green
+      - name: red
         image: kodekloud/webapp-color
         env:
         - name: APP_COLOR
-          value: green
+          value: red
         ports:
         - containerPort: 8080
