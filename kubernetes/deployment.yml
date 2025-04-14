@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-web
+  name: simple_web
   namespace: default
   labels:
-    app: simple-web
+    app: simple_web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-web
+      app: simple_web
   template:
     metadata:
       labels:
-        app: simple-web
+        app: simple_web
     spec:
       containers:
-      - name: simple-web
-        image: omoknooni/simple-web:latest
+      - name: simple_web
+        image: omoknooni/simple_web:latest
         ports:
         - containerPort: 5000
