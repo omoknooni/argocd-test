@@ -4,19 +4,44 @@ metadata:
   name: simple-web
   namespace: default
   labels:
-    app: simple_web
+    app: simple-web
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: simple_web
+      app: simple-web
   template:
     metadata:
       labels:
-        app: simple_web
+        app: simple-web
     spec:
       containers:
-      - name: simple_web
+      - name: simple-web
         image: omoknooni/simple_web:latest
         ports:
         - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deploy
+  labels:
+    app: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blue
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      containers:
+      - name: blue
+        image: kodekloud/webapp-color
+        env:
+        - name: APP_COLOR
+          value: blue
+        ports:
+        - containerPort: 8080

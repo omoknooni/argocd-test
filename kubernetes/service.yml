@@ -6,7 +6,19 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: simple_web
+    app: simple-web
   ports:
   - port: 80
     targetPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue
+spec:
+  type: ClusterIP
+  selector:
+    app: blue
+  ports:
+  - port: 80
+    targetPort: 8080
