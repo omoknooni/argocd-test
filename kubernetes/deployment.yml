@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-petclinic
+  name: simple-web
   namespace: default
   labels:
-    app: spring-petclinic
+    app: simple-web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-petclinic
+      app: simple-web
   template:
     metadata:
       labels:
-        app: spring-petclinic
+        app: simple-web
     spec:
       containers:
-      - name: spring-petclinic
-        image: omoknooni/spring-petclinic:latest
+      - name: simple-web
+        image: omoknooni/simple-web:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
