@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple_web
+  name: simple-web
   namespace: default
   labels:
     app: simple_web
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: simple_web
