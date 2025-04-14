@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-web
-        image: omoknooni/simple_web:latest
+        image: omoknooni/simple_web:14442868464
         ports:
         - containerPort: 5000
 ---
